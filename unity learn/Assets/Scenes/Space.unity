@@ -152,8 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c963f0a4ccb86641b0042043664c5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalprefabs:
-  - {fileID: 7748506605635504320, guid: 50c8cdcc5f286b540913b0250c54179c, type: 3}
+  asteroid: {fileID: 7748506605635504320, guid: 50c8cdcc5f286b540913b0250c54179c, type: 3}
+  spawnRangeX: 10
+  spawnPosY: 8
+  isSpawning: 0
 --- !u!4 &382888619
 Transform:
   m_ObjectHideFlags: 0
@@ -440,7 +442,7 @@ GameObject:
   - component: {fileID: 1707466574}
   m_Layer: 0
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -524,6 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   xRange: 10
+  health: 5
   laser: {fileID: 2521194878790888852, guid: 4ddca1b6783f1504cb91ea74cbb2b4d1, type: 3}
 --- !u!1 &1955637239
 GameObject:

@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     public float speed = 20.0f;
     public float xRange = 10f;
+    public float health = 5f;
 
     public GameObject laser;
 
@@ -41,4 +42,14 @@ public class PlayerController : MonoBehaviour
 
 
     }
+
+    public void TakeDamage()
+	{
+        health--;
+
+        if(health < 1)
+		{
+            gameObject.GetComponent<SpawnManager>().Death();
+		}
+	}
 }

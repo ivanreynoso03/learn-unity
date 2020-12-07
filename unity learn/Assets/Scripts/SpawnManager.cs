@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] animalprefabs;
-    private float spawnRangeX = 10;
-    private float spawnPosY = 8;
+    [SerializeField] private GameObject asteroid;
+    [SerializeField] private float spawnRangeX = 10;
+    [SerializeField] private float spawnPosY = 8;
+    [SerializeField] private bool isSpawning = true;
 
-    private float startDelay = 2f;
-    private float spawnInterval = 1.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+      StartCoroutine(SpawnEnemies());
     }
 
     // Update is called once per frame
     void Update()
     {
+ 
     }
 
-    void SpawnRandomAnimal()
+    IEnumerator SpawnEnemies()
 	{
-        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), spawnPosY, 0);
-        int animalIndex = Random.Range(0, animalprefabs.Length);
-        Instantiate(animalprefabs[animalIndex], spawnPos, animalprefabs[animalIndex].transform.rotation);
+        while(isSpawning == true)
+		{
+            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), spawnPosY, 0);
+            Instantiate(asteroid, spawnPos, Quaternion.identity);
+            yield return new WaitForSeconds(1);
+        }
+
     }
+
+    public void Death()
+	{
+        isSpawning = false;
+	}
 }
