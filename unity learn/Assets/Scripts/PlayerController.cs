@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float horizontalInput;
+    private float horizontalInput;
     public float speed = 20.0f;
     public float xRange = 10f;
 
-    public GameObject foodprojectile;
+    public GameObject laser;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
 
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-            Instantiate(foodprojectile, transform.position, foodprojectile.transform.rotation);
+            Instantiate(laser, transform.position, laser.transform.rotation);
 		}
 
 
