@@ -164,7 +164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4623864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.3, y: 0, z: 34.9}
+  m_LocalPosition: {x: 8.3, y: 0, z: 37.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -559,6 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   xRange: 10
+  health: 5
   laser: {fileID: 8512188484960197359, guid: 9674bbc9e7c17334face99974bf74bf5, type: 3}
 --- !u!65 &1535986782
 BoxCollider:

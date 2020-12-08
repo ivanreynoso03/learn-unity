@@ -41,14 +41,4 @@ public class PlayerController : MonoBehaviour
 		}
 
     }
-
-    public void TakeDamage()
-	{
-        health--;
-
-        if(health < 1)
-		{
-            gameObject.GetComponent<SpawnManager>().Death();
-		}
-	}
 }
