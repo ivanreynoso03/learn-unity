@@ -39,6 +39,5 @@ public class PlayerController : MonoBehaviour
             Instantiate(laser, transform.position, laser.transform.rotation);
 		}
 
-
     }
 }
